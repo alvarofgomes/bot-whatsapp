@@ -17,9 +17,12 @@ public class AgendadorMensagem {
 
         long atrasoInicial = calcularAtrasoInicial(horarioPrimeiroEnvio);
 
+        System.out.println("Atraso inicial em segundos: " + atrasoInicial);
+
         scheduler.scheduleAtFixedRate(() -> {
             try {
                 LocalDateTime agora = LocalDateTime.now();
+                System.out.println("Executando envio em: " + agora);
 
                 if (!agora.isBefore(dataViagem)) {
                     String mensagemFinal = "Hoje é o grande dia! Boa viagem!";
@@ -44,7 +47,7 @@ public class AgendadorMensagem {
                 e.printStackTrace();
             }
 
-        }, atrasoInicial, 1, TimeUnit.MINUTES);
+        }, atrasoInicial, 60, TimeUnit.SECONDS); // teste: repete a cada 60 segundos
     }
 
     private long calcularAtrasoInicial(LocalTime horarioPrimeiroEnvio) {
@@ -52,7 +55,7 @@ public class AgendadorMensagem {
 
         LocalDateTime proximoEnvio = agora.withHour(horarioPrimeiroEnvio.getHour())
                 .withMinute(horarioPrimeiroEnvio.getMinute())
-                .withSecond(0)
+                .withSecond(horarioPrimeiroEnvio.getSecond())
                 .withNano(0);
 
         if (!proximoEnvio.isAfter(agora)) {
