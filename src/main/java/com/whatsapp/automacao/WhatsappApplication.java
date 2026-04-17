@@ -33,6 +33,6 @@ public class WhatsappApplication implements CommandLineRunner {
         AgendadorMensagem agendador = new AgendadorMensagem();
         agendador.iniciar(dataViagem, telefones, horarioPrimeiroEnvio);
 
-        System.out.println("Sistema automático iniciado!");
+        System.out.println("Sistema online automatico iniciado!");
     }
 }
