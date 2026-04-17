@@ -44,7 +44,7 @@ public class AgendadorMensagem {
                 e.printStackTrace();
             }
 
-        }, atrasoInicial, 12, TimeUnit.HOURS);
+        }, atrasoInicial, 12 * 60 * 60, TimeUnit.SECONDS);
     }
 
     private long calcularAtrasoInicial(LocalTime horarioPrimeiroEnvio) {
