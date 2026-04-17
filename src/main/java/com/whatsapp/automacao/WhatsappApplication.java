@@ -28,11 +28,12 @@ public class WhatsappApplication implements CommandLineRunner {
             "558196369515"
         );
 
-        LocalTime horarioPrimeiroEnvio = LocalTime.now().plusSeconds(30);
+        LocalTime horarioPrimeiroEnvio = LocalTime.of(8, 0);
 
         AgendadorMensagem agendador = new AgendadorMensagem();
         agendador.iniciar(dataViagem, telefones, horarioPrimeiroEnvio);
 
+        System.out.println("MODO PRODUCAO 8H/20H ATIVO");
         System.out.println("Sistema online automatico iniciado!");
     }
 }
