@@ -28,7 +28,7 @@ public class WhatsappApplication implements CommandLineRunner {
             "558196369515"
         );
 
-        LocalTime horarioPrimeiroEnvio = LocalTime.of(20, 0);
+        LocalTime horarioPrimeiroEnvio = LocalTime.now().plusMinutes(1);
 
         AgendadorMensagem agendador = new AgendadorMensagem();
         agendador.iniciar(dataViagem, telefones, horarioPrimeiroEnvio);
