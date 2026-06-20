@@ -4,7 +4,12 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
-### STS ###
+### Credenciais ###
+.env
+*.env
+
+### Eclipse ###
+.metadata/
 .apt_generated
 .classpath
 .factorypath

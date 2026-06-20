@@ -22,10 +22,10 @@ public class WhatsappApplication implements CommandLineRunner {
         LocalDateTime dataViagem = LocalDateTime.of(2026, 5, 1, 9, 0);
 
         List<String> telefones = Arrays.asList(
-            "558183227500",
-            "558193500657",
-            "558198330978",
-            "558196369515"
+            "5581900000001",
+            "5581900000002",
+            "5581900000003",
+            "5581900000004"
         );
 
         LocalTime horarioPrimeiroEnvio = LocalTime.of(8, 0);
